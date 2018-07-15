@@ -2,8 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Verse
 
+
+# homepage (/app)
 def index(request):
-    return HttpResponse("Praise God")
+    return render(request, "index.html")
+
+
+# def chapter(request, book, chapter):
+#     pass
+
 
 def verse(request, book, chapter, verse_num):
 
