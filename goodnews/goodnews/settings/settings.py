@@ -73,7 +73,7 @@ ROOT_URLCONF = 'goodnews.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["../../../goodnews/app/templates/goodnews"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

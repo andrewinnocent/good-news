@@ -20,13 +20,6 @@ conn = psycopg2.connect(host=host, dbname=dbname, user=user, password=password)
 # Open a cursor to perform database operations
 cur = conn.cursor()
 
-cur.execute("""CREATE TABLE app_verse(
-    book_name char(30),
-    book_abbr char(30),
-    chapter_number int,
-    verse_number int,
-    verse_text text
-);""")
 # Parse through JSON file:
 # each book is an object in the data array
 # keys: abbrev, chapters, name

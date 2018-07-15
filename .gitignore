@@ -1,6 +1,7 @@
 goodnews/goodnews/settings/config.json
 goodnews/goodnews/__pycache__/
 goodnews/app/__pycache__/
+goodnews/goodnews/settings/__pycache__/
 goodnews/app/migrations/
 lib/
 bin/
