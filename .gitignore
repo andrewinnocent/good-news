@@ -9,3 +9,4 @@ lib64
 pyvnenv.cfg
 venv/
 share/
+goodnews/settings/__pycache__/settings.cpython-36.pyc
