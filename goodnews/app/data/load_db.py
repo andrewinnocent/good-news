@@ -1,17 +1,32 @@
 """Load raw Bible data from bible.json to PostgreSQL data"""
 
 import psycopg2
+import os
 # import settings
 import json
 with open('bible.json') as f:
     data = json.load(f)
 
 # Connect to an existing database
-conn = psycopg2.connect("dbname=good-news user=Innocent")
+with open(os.environ.get('CONFIG')) as f:
+    configs = json.loads(f.read())
+    dbname = configs["DBNAME"]
+    user = configs["USER"]
+    password = configs["PASSWORD"]
+    host = configs["HOST"]
+
+conn = psycopg2.connect(host=host, dbname=dbname, user=user, password=password)
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
 
+cur.execute("""CREATE TABLE app_verse(
+    book_name char(30),
+    book_abbr char(30),
+    chapter_number int,
+    verse_number int,
+    verse_text text
+);""")
 # Parse through JSON file:
 # each book is an object in the data array
 # keys: abbrev, chapters, name

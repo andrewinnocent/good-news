@@ -18,7 +18,6 @@ with open(os.environ.get('CONFIG')) as f:
 
 def get_env_var(setting, configs=configs):
  try:
-     print(configs)
      val = configs[setting]
      if val == 'True':
          val = True
