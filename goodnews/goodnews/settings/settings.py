@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +67,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'goodnews.urls'
@@ -99,7 +97,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'USER': configs["USER"],
-        'NAME': 'good-news',
+        'NAME': configs["DBNAME"],
         'PASSWORD': configs["PASSWORD"],
         'HOST': '127.0.0.1',
         'PORT': '5432',
